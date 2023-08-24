@@ -1,19 +1,40 @@
-function Book(title, author, year, pages, read) {
-  this.title = title 
-  this.author = author
-  this.year = year
-  this.pages = pages
-  this.read = read
+const myLibrary = [];
+ 
+// object constructor
+function Book(title, author, year, isRead = false) {
+  this.title = title;
+  this.author = author;
+  this.year = year; 
+  this.isRead = isRead;
 
-  this.readBook = function() {
-    this.read = true
-  }
+  this.readBook = function () {
+    this.isRead = true; 
+  };
 
-  this.info = function() {
-    return title
-  }
+  this.unReadBook = function () {
+    this.isRead = false; 
+  }; 
+
+  this.info = function () {
+    return { title, author, pages, isRead };
+  };
 }
 
-const kymaniBook = new Book('kymanibook', 'kymani', 2000, 79, false)
+function addBookToLibrary(book) {
+  myLibrary.push(book);
+  displayBooks()
+}
+ 
 
-console.log(kymaniBook.info())
+function displayBooks() {
+  
+  for (let i = 0; i < myLibrary.length; i++) {
+    
+    const div = document.createElement('div')
+    div.style.backgroundColor = 'black'
+    div.style.height = '100px' 
+    div.style.width = '100px'
+
+    document.body.appendChild(div) 
+  }
+}
