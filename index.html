@@ -11,25 +11,33 @@
     <h1>My library</h1>
     <h2>A simple library application 📘</h2>
 
-    <form>
+    <button>Add a Book +</button>
+
+    <form id="book-form"> 
       <div>
-        <label for="">Title:</label>
-        <input id="" type="text" placeholder="add a title" required>
+        <label for="title">Title:</label>
+        <input id="title" type="text" placeholder="add a title" required>
       </div>
 
       <div>
-        <label for="">Author:</label>
-        <input id="" type="text" placeholder="add an author" required>
+        <label for="author">Author:</label>
+        <input id="author" type="text" placeholder="add an author" required>
       </div>
 
       <div>
-        <label for="">Year:</label>
-        <input id="" type="text" placeholder="add a year" required>
+        <label for="pages">Pages:</label>
+        <input id="pages" type="number" min=1 placeholder="add pages" required>
+      </div>
+
+
+      <div>
+        <label for="year">Year:</label>
+        <input id="year" type="text" placeholder="add a year" required>
       </div>
 
       <div>
-        <label for="">Have you read it?:</label>
-        <input id="" type="checkbox" placeholder="">
+        <label for="read">Have you read it?:</label>
+        <input id="read" type="checkbox" placeholder="">
       </div>
 
       <div>
