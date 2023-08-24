@@ -1,4 +1,4 @@
-# My Library
+# My Library 📘
 
 #### A CRUD application in Javascript
 
