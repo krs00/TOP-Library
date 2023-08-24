@@ -1,6 +1,6 @@
 # My Library 📘
 
-#### A CRUD application in Javascript
+#### A CRUD application in JavaScript
 
 ## Technologies Used
 
