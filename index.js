@@ -1,5 +1,17 @@
-const myLibrary = [];
- 
+// GET NECESSARY DOM NODES
+bookForm = document.getElementById("book-form")
+
+bookForm.addEventListener("submit", handleFormSubmit) 
+
+function handleFormSubmit(e) {
+  e.preventDefault();
+  
+}
+
+
+
+const myLibrary = []; // Holds all added books
+
 // object constructor
 function Book(title, author, year, isRead = false) {
   this.title = title;
