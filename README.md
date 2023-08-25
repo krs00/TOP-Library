@@ -1,6 +1,6 @@
 # My Library 📘
 
-#### A CRUD application in JavaScript
+#### A small application for tracking books
 
 ## Technologies Used
 
@@ -10,8 +10,7 @@
 
 ## Description
 
-This is a small application made for tracking your books. You can add, edit, delete and view a list of books.
-Book information on the page will be updated dynamically. This was made to practice object oriented JavaScript.
+This is a small application made for tracking your books. This was made to practice object oriented JavaScript for The Odin Project.
 
 ## Setup/Installation Requirements
  
