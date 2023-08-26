@@ -4,6 +4,7 @@ const newBookForm = document.getElementById('book-form')
 newBookForm.addEventListener('submit', handleFormSubmit)
 
 const myLibrary = [] // Empty array, holds all of the book objects'
+// Global variable for keeping track of book ID's
 let bookId = 0 
 
 function handleFormSubmit(e) { 
@@ -21,8 +22,8 @@ function handleFormSubmit(e) {
   // add new instance of book to myLibrary array
   setBookId(newBook) 
   addBookToLibrary(newBook)
-  addBookToDisplay() 
-  console.log(newBook.title)
+  addBookToDisplay()
+  updateBookId()
   console.log(myLibrary) 
 
 }
@@ -41,7 +42,6 @@ function Book(title, author, pages, isRead) {
 
 function setBookId(bookObj) {
   bookObj.id = bookId
-  updateBookId()  
 }
 
 function updateBookId() {
@@ -51,9 +51,7 @@ function updateBookId() {
 
 function addBookToLibrary(book) {
   myLibrary.push(book) 
-} 
-
-
+}
 
 
 function addBookToDisplay() {
@@ -69,12 +67,21 @@ function addBookToDisplay() {
   div.appendChild(delBtn)
   div.appendChild(readStatusBtn) 
 
-  function removeBook() {
-    div.remove(); 
-  }
-
-  delBtn.addEventListener('click', removeBook)
+  delBtn.addEventListener('click', removeBook) 
 
   document.body.appendChild(div) 
   
 }
+
+function removeBook() {
+  let currentId = parseInt(this.parentElement.getAttribute("data-index"))
+   
+  const currentObj = myLibrary.findIndex(book => book.id === currentId)
+
+  myLibrary.splice(currentObj, 1 )
+ 
+  this.parentElement.remove();
+
+}
+
+document.body.addEventListener('click', () => console.log(myLibrary))
