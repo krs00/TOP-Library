@@ -61,11 +61,11 @@ function addBookToDisplay() {
   const delBtn = document.createElement('button')
   delBtn.textContent = 'Delete'
 
-  const readStatusBtn = document.createElement('button')
+  const readBtn = document.createElement('button')
   readStatusBtn.textContent = 'Read' 
 
   div.appendChild(delBtn)
-  div.appendChild(readStatusBtn) 
+  div.appendChild(readBtn) 
 
   delBtn.addEventListener('click', removeBook) 
 
@@ -75,13 +75,16 @@ function addBookToDisplay() {
 
 function removeBook() {
   let currentId = parseInt(this.parentElement.getAttribute("data-index"))
-   
+  
   const currentObj = myLibrary.findIndex(book => book.id === currentId)
 
   myLibrary.splice(currentObj, 1 )
- 
+  
   this.parentElement.remove();
 
 }
 
+
+
+// for testing purposes
 document.body.addEventListener('click', () => console.log(myLibrary))
