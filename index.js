@@ -49,11 +49,27 @@ function findLastIndex() {
 }
 
 
+
 function addBookToDisplay() {
-  const dataNum = findLastIndex()
   const div = document.createElement('div')
-  div.setAttribute('data-index', dataNum )
+  div.setAttribute('data-index', findLastIndex() )
   div.classList.add('book-div')
+  const delBtn = document.createElement('button')
+  delBtn.textContent = 'Delete'
+  div.appendChild(delBtn)
+
+  function removeBook() {
+    div.remove();
+
+    for (let i = 0; i < myLibrary.length; i++) {
+      
+    }
+
+
+  } 
+
+
+  delBtn.addEventListener('click', removeBook)
 
   document.body.appendChild(div) 
   
