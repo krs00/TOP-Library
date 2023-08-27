@@ -24,7 +24,7 @@ function handleFormSubmit(e) {
   addBookToLibrary(newBook)
   addBookToDisplay()
   updateBookId()
-  console.log(myLibrary) 
+  // console.log(myLibrary) 
 
 }
 
@@ -60,64 +60,41 @@ function addBookToDisplay() {
   div.classList.add('book-div')
   const delBtn = document.createElement('button')
   delBtn.textContent = 'Delete'
-
   const readBtn = document.createElement('button')
-
-
   const currentObj = myLibrary.find(book => book.id === bookId)
-
   if (currentObj.isRead === true) {
     readBtn.textContent = 'This book has been read' 
   } else if (currentObj.isRead === false) {
     readBtn.textContent = 'This book is unread' 
-  }
-
-  
+  } 
 
   div.appendChild(delBtn)
   div.appendChild(readBtn) 
-
   delBtn.addEventListener('click', removeBook)
-
   readBtn.addEventListener('click', readBook) 
-
   document.body.appendChild(div) 
   
 }
 
 function removeBook() {
   let currentId = parseInt(this.parentElement.getAttribute("data-index")) 
-  
   // Finds index of object book inside of myLibrary
   const currentObj = myLibrary.findIndex(book => book.id === currentId)
-
   myLibrary.splice(currentObj, 1 )
-
   this.parentElement.remove();
-
 }
 
 function readBook() {
   let currentId = parseInt(this.parentElement.getAttribute("data-index"))
-  
   // Finds actual object of book in myLibrary
   const currentObj = myLibrary.find(book => book.id === currentId)
-
   if (currentObj.isRead === true) {
     this.textContent = 'This book is unread'
   } else if (currentObj.isRead === false) {
     this.textContent = 'This book has been read'
   }
-
   currentObj.toggleRead()
-
-  console.log(currentObj) 
- 
-  
-
+  // console.log(currentObj) 
 }
-
-
-
 // for testing purposes
-document.body.addEventListener('click', () => console.log(myLibrary))
+// document.body.addEventListener('click', () => console.log(myLibrary))
