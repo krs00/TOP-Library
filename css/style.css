@@ -1,1 +1,18 @@
-@import url("reset.css"); 
+@import url("reset.css");
+
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: arial;
+}
+
+.book-div {
+  height: auto;
+  width: 350px;
+  padding: 10px;
+  background-color: lightgrey;
+}
+
+.books-display {
+  
+}
